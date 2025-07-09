@@ -1,0 +1,387 @@
+2025-07-09 22:39:14.157 - RealTimeSTT: realtimestt - INFO - Starting RealTimeSTT
+2025-07-09 22:39:14.170 - RealTimeSTT: realtimestt - INFO - Initializing audio recording (creating pyAudio input stream, sample rate: 16000 buffer size: 512
+2025-07-09 22:39:14.173 - RealTimeSTT: realtimestt - INFO - Initializing faster_whisper realtime transcription model tiny, default device: cpu, compute type: default, device index: 0, download root: None
+2025-07-09 22:39:17.777 - RealTimeSTT: realtimestt - DEBUG - Faster_whisper realtime speech to text transcription model initialized successfully
+2025-07-09 22:39:17.777 - RealTimeSTT: realtimestt - INFO - Initializing WebRTC voice with Sensitivity 3
+2025-07-09 22:39:17.777 - RealTimeSTT: realtimestt - DEBUG - WebRTC VAD voice activity detection engine initialized successfully
+2025-07-09 22:39:17.855 - RealTimeSTT: realtimestt - ERROR - Error initializing Silero VAD voice activity detection engine: It looks like there is no internet connection and the repo could not be found in the cache (/Users/pranavyadlapati/.cache/torch/hub)
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 1348, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1037, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 975, in send
+    self.connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1454, in connect
+    self.sock = self._context.wrap_socket(self.sock,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ssl.py", line 517, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ssl.py", line 1075, in _create
+    self.do_handshake()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ssl.py", line 1346, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/pranavyadlapati/Library/Python/3.11/lib/python/site-packages/torch/hub.py", line 161, in _parse_repo_info
+    with urlopen(f"https://github.com/{repo_owner}/{repo_name}/tree/main/"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 519, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 1391, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 1351, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/pranavyadlapati/Library/Python/3.11/lib/python/site-packages/RealtimeSTT/audio_recorder.py", line 922, in __init__
+    self.silero_vad_model, _ = torch.hub.load(
+                               ^^^^^^^^^^^^^^^
+  File "/Users/pranavyadlapati/Library/Python/3.11/lib/python/site-packages/torch/hub.py", line 638, in load
+    repo_or_dir = _get_cache_or_reload(
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pranavyadlapati/Library/Python/3.11/lib/python/site-packages/torch/hub.py", line 229, in _get_cache_or_reload
+    repo_owner, repo_name, ref = _parse_repo_info(github)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pranavyadlapati/Library/Python/3.11/lib/python/site-packages/torch/hub.py", line 177, in _parse_repo_info
+    raise RuntimeError(
+RuntimeError: It looks like there is no internet connection and the repo could not be found in the cache (/Users/pranavyadlapati/.cache/torch/hub)
+2025-07-09 22:43:00.112 - RealTimeSTT: realtimestt - INFO - Starting RealTimeSTT
+2025-07-09 22:43:00.119 - RealTimeSTT: realtimestt - INFO - Initializing audio recording (creating pyAudio input stream, sample rate: 16000 buffer size: 512
+2025-07-09 22:43:00.125 - RealTimeSTT: realtimestt - INFO - Initializing faster_whisper realtime transcription model tiny, default device: cpu, compute type: default, device index: 0, download root: None
+2025-07-09 22:43:01.036 - RealTimeSTT: realtimestt - DEBUG - Faster_whisper realtime speech to text transcription model initialized successfully
+2025-07-09 22:43:01.036 - RealTimeSTT: realtimestt - INFO - Initializing WebRTC voice with Sensitivity 3
+2025-07-09 22:43:01.036 - RealTimeSTT: realtimestt - DEBUG - WebRTC VAD voice activity detection engine initialized successfully
+2025-07-09 22:43:01.120 - RealTimeSTT: realtimestt - ERROR - Error initializing Silero VAD voice activity detection engine: It looks like there is no internet connection and the repo could not be found in the cache (/Users/pranavyadlapati/.cache/torch/hub)
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 1348, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1037, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 975, in send
+    self.connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1454, in connect
+    self.sock = self._context.wrap_socket(self.sock,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ssl.py", line 517, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ssl.py", line 1075, in _create
+    self.do_handshake()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ssl.py", line 1346, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/pranavyadlapati/Library/Python/3.11/lib/python/site-packages/torch/hub.py", line 161, in _parse_repo_info
+    with urlopen(f"https://github.com/{repo_owner}/{repo_name}/tree/main/"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 519, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 1391, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/urllib/request.py", line 1351, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/pranavyadlapati/Library/Python/3.11/lib/python/site-packages/RealtimeSTT/audio_recorder.py", line 922, in __init__
+    self.silero_vad_model, _ = torch.hub.load(
+                               ^^^^^^^^^^^^^^^
+  File "/Users/pranavyadlapati/Library/Python/3.11/lib/python/site-packages/torch/hub.py", line 638, in load
+    repo_or_dir = _get_cache_or_reload(
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pranavyadlapati/Library/Python/3.11/lib/python/site-packages/torch/hub.py", line 229, in _get_cache_or_reload
+    repo_owner, repo_name, ref = _parse_repo_info(github)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/pranavyadlapati/Library/Python/3.11/lib/python/site-packages/torch/hub.py", line 177, in _parse_repo_info
+    raise RuntimeError(
+RuntimeError: It looks like there is no internet connection and the repo could not be found in the cache (/Users/pranavyadlapati/.cache/torch/hub)
+2025-07-09 22:44:47.811 - RealTimeSTT: realtimestt - INFO - Starting RealTimeSTT
+2025-07-09 22:44:47.818 - RealTimeSTT: realtimestt - INFO - Initializing audio recording (creating pyAudio input stream, sample rate: 16000 buffer size: 512
+2025-07-09 22:44:47.823 - RealTimeSTT: realtimestt - INFO - Initializing faster_whisper realtime transcription model tiny, default device: cpu, compute type: default, device index: 0, download root: None
+2025-07-09 22:44:48.704 - RealTimeSTT: realtimestt - DEBUG - Faster_whisper realtime speech to text transcription model initialized successfully
+2025-07-09 22:44:48.704 - RealTimeSTT: realtimestt - INFO - Initializing WebRTC voice with Sensitivity 3
+2025-07-09 22:44:48.704 - RealTimeSTT: realtimestt - DEBUG - WebRTC VAD voice activity detection engine initialized successfully
+2025-07-09 22:44:51.987 - RealTimeSTT: realtimestt - DEBUG - Silero VAD voice activity detection engine initialized successfully
+2025-07-09 22:44:51.987 - RealTimeSTT: realtimestt - DEBUG - Starting realtime worker
+2025-07-09 22:44:51.987 - RealTimeSTT: realtimestt - DEBUG - Waiting for main transcription model to start
+2025-07-09 22:44:51.988 - RealTimeSTT: realtimestt - DEBUG - Main transcription model ready
+2025-07-09 22:44:51.988 - RealTimeSTT: realtimestt - DEBUG - RealtimeSTT initialization completed successfully
+2025-07-09 22:45:04.559 - RealTimeSTT: realtimestt - DEBUG - Finishing recording thread
+2025-07-09 22:45:04.559 - RealTimeSTT: realtimestt - DEBUG - Receive from stdout pipe
+2025-07-09 22:45:04.559 - RealTimeSTT: realtimestt - INFO - None
+2025-07-09 22:45:04.563 - RealTimeSTT: realtimestt - DEBUG - Terminating reader process
+2025-07-09 22:45:04.980 - RealTimeSTT: realtimestt - DEBUG - Terminating transcription process
+2025-07-09 22:45:04.980 - RealTimeSTT: realtimestt - DEBUG - Finishing realtime thread
+2025-07-09 22:48:27.758 - RealTimeSTT: realtimestt - INFO - Starting RealTimeSTT
+2025-07-09 22:48:27.765 - RealTimeSTT: realtimestt - INFO - Initializing audio recording (creating pyAudio input stream, sample rate: 16000 buffer size: 512
+2025-07-09 22:48:27.770 - RealTimeSTT: realtimestt - INFO - Initializing faster_whisper realtime transcription model tiny, default device: cpu, compute type: default, device index: 0, download root: None
+2025-07-09 22:48:28.678 - RealTimeSTT: realtimestt - DEBUG - Faster_whisper realtime speech to text transcription model initialized successfully
+2025-07-09 22:48:28.678 - RealTimeSTT: realtimestt - INFO - Initializing WebRTC voice with Sensitivity 3
+2025-07-09 22:48:28.678 - RealTimeSTT: realtimestt - DEBUG - WebRTC VAD voice activity detection engine initialized successfully
+2025-07-09 22:48:28.967 - RealTimeSTT: realtimestt - DEBUG - Silero VAD voice activity detection engine initialized successfully
+2025-07-09 22:48:28.967 - RealTimeSTT: realtimestt - DEBUG - Starting realtime worker
+2025-07-09 22:48:28.967 - RealTimeSTT: realtimestt - DEBUG - Waiting for main transcription model to start
+2025-07-09 22:48:30.602 - RealTimeSTT: realtimestt - DEBUG - Main transcription model ready
+2025-07-09 22:48:30.602 - RealTimeSTT: realtimestt - DEBUG - RealtimeSTT initialization completed successfully
+2025-07-09 22:48:39.776 - RealTimeSTT: realtimestt - DEBUG - Finishing recording thread
+2025-07-09 22:48:39.778 - RealTimeSTT: realtimestt - DEBUG - Terminating reader process
+2025-07-09 22:48:40.194 - RealTimeSTT: realtimestt - DEBUG - Terminating transcription process
+2025-07-09 22:48:40.194 - RealTimeSTT: realtimestt - DEBUG - Finishing realtime thread
+2025-07-09 22:49:20.390 - RealTimeSTT: realtimestt - INFO - Starting RealTimeSTT
+2025-07-09 22:49:20.399 - RealTimeSTT: realtimestt - INFO - Initializing audio recording (creating pyAudio input stream, sample rate: 16000 buffer size: 512
+2025-07-09 22:49:20.405 - RealTimeSTT: realtimestt - INFO - Initializing faster_whisper realtime transcription model tiny, default device: cpu, compute type: default, device index: 0, download root: None
+2025-07-09 22:49:21.362 - RealTimeSTT: realtimestt - DEBUG - Faster_whisper realtime speech to text transcription model initialized successfully
+2025-07-09 22:49:21.362 - RealTimeSTT: realtimestt - INFO - Initializing WebRTC voice with Sensitivity 3
+2025-07-09 22:49:21.362 - RealTimeSTT: realtimestt - DEBUG - WebRTC VAD voice activity detection engine initialized successfully
+2025-07-09 22:49:21.597 - RealTimeSTT: realtimestt - DEBUG - Silero VAD voice activity detection engine initialized successfully
+2025-07-09 22:49:21.597 - RealTimeSTT: realtimestt - DEBUG - Starting realtime worker
+2025-07-09 22:49:21.597 - RealTimeSTT: realtimestt - DEBUG - Waiting for main transcription model to start
+2025-07-09 22:49:23.608 - RealTimeSTT: realtimestt - DEBUG - Main transcription model ready
+2025-07-09 22:49:23.608 - RealTimeSTT: realtimestt - DEBUG - RealtimeSTT initialization completed successfully
+2025-07-09 22:49:29.826 - RealTimeSTT: realtimestt - DEBUG - Finishing recording thread
+2025-07-09 22:49:29.827 - RealTimeSTT: realtimestt - DEBUG - Receive from stdout pipe
+2025-07-09 22:49:29.827 - RealTimeSTT: realtimestt - INFO - None
+2025-07-09 22:49:29.828 - RealTimeSTT: realtimestt - DEBUG - Terminating reader process
+2025-07-09 22:49:30.257 - RealTimeSTT: realtimestt - DEBUG - Terminating transcription process
+2025-07-09 22:49:30.257 - RealTimeSTT: realtimestt - DEBUG - Finishing realtime thread
+2025-07-09 22:51:34.730 - RealTimeSTT: realtimestt - INFO - Starting RealTimeSTT
+2025-07-09 22:51:34.736 - RealTimeSTT: realtimestt - INFO - Initializing audio recording (creating pyAudio input stream, sample rate: 16000 buffer size: 512
+2025-07-09 22:51:34.742 - RealTimeSTT: realtimestt - INFO - Initializing faster_whisper realtime transcription model tiny, default device: cpu, compute type: default, device index: 0, download root: None
+2025-07-09 22:51:35.656 - RealTimeSTT: realtimestt - DEBUG - Faster_whisper realtime speech to text transcription model initialized successfully
+2025-07-09 22:51:35.656 - RealTimeSTT: realtimestt - INFO - Initializing WebRTC voice with Sensitivity 3
+2025-07-09 22:51:35.657 - RealTimeSTT: realtimestt - DEBUG - WebRTC VAD voice activity detection engine initialized successfully
+2025-07-09 22:51:35.929 - RealTimeSTT: realtimestt - DEBUG - Silero VAD voice activity detection engine initialized successfully
+2025-07-09 22:51:35.929 - RealTimeSTT: realtimestt - DEBUG - Starting realtime worker
+2025-07-09 22:51:35.929 - RealTimeSTT: realtimestt - DEBUG - Waiting for main transcription model to start
+2025-07-09 22:51:37.745 - RealTimeSTT: realtimestt - DEBUG - Main transcription model ready
+2025-07-09 22:51:37.745 - RealTimeSTT: realtimestt - DEBUG - RealtimeSTT initialization completed successfully
+2025-07-09 22:51:37.746 - RealTimeSTT: realtimestt - INFO - recording started
+2025-07-09 22:51:37.746 - RealTimeSTT: realtimestt - INFO - State changed from 'inactive' to 'recording'
+2025-07-09 22:51:37.793 - RealTimeSTT: realtimestt - INFO - State changed from 'recording' to 'inactive'
+2025-07-09 22:51:38.070 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 1024
+2025-07-09 22:51:38.071 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-07-09 22:51:38.270 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 4096
+2025-07-09 22:51:38.275 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-07-09 22:51:38.470 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 7168
+2025-07-09 22:51:38.480 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-07-09 22:51:38.671 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 10240
+2025-07-09 22:51:38.682 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-07-09 22:51:38.872 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 13312
+2025-07-09 22:51:38.884 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-07-09 22:51:39.072 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 16384
+2025-07-09 22:51:39.086 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-07-09 22:51:39.272 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 19456
+2025-07-09 22:51:39.288 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-07-09 22:51:39.473 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 22528
+2025-07-09 22:51:39.490 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-07-09 22:51:39.673 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 26624
+2025-07-09 22:51:39.693 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-07-09 22:51:39.874 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 29696
+2025-07-09 22:51:39.893 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-07-09 22:51:40.075 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 32768
+2025-07-09 22:51:40.092 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-07-09 22:51:40.275 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 35840
+2025-07-09 22:51:40.296 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-07-09 22:51:40.475 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 38912
+2025-07-09 22:51:40.500 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-07-09 22:51:40.676 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 43008
+2025-07-09 22:51:40.703 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-07-09 22:51:40.878 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 46080
+2025-07-09 22:51:40.905 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-07-09 22:51:41.079 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 49152
+2025-07-09 22:51:41.106 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-07-09 22:51:41.279 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 52224
+2025-07-09 22:51:41.308 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-07-09 22:51:41.479 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 55296
+2025-07-09 22:51:41.511 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-07-09 22:51:41.680 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 58368
+2025-07-09 22:51:41.713 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-07-09 22:51:41.880 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 61440
+2025-07-09 22:51:41.915 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-07-09 22:51:42.081 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 64512
+2025-07-09 22:51:42.117 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-07-09 22:51:42.281 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 68608
+2025-07-09 22:51:42.322 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-07-09 22:51:42.482 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 71680
+2025-07-09 22:51:42.521 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-07-09 22:51:42.683 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 74752
+2025-07-09 22:51:42.709 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-07-09 22:51:42.710 - RealTimeSTT: realtimestt - DEBUG - Finishing recording thread
+2025-07-09 22:51:42.710 - RealTimeSTT: realtimestt - DEBUG - Receive from stdout pipe
+2025-07-09 22:51:42.710 - RealTimeSTT: realtimestt - INFO - None
+2025-07-09 22:51:42.710 - RealTimeSTT: realtimestt - DEBUG - Current realtime buffer size: 74752
+2025-07-09 22:51:42.718 - RealTimeSTT: realtimestt - DEBUG - Terminating reader process
+2025-07-09 22:51:42.730 - RealTimeSTT: realtimestt - DEBUG - Realtime text detected: 
+2025-07-09 22:51:43.130 - RealTimeSTT: realtimestt - DEBUG - Terminating transcription process
+2025-07-09 22:51:43.130 - RealTimeSTT: realtimestt - DEBUG - Finishing realtime thread
+2025-07-09 22:55:33.291 - RealTimeSTT: realtimestt - INFO - Starting RealTimeSTT
+2025-07-09 22:55:33.298 - RealTimeSTT: realtimestt - INFO - Initializing audio recording (creating pyAudio input stream, sample rate: 16000 buffer size: 512
+2025-07-09 22:55:33.303 - RealTimeSTT: realtimestt - INFO - Initializing faster_whisper realtime transcription model tiny, default device: cpu, compute type: default, device index: 0, download root: None
+2025-07-09 22:55:34.467 - RealTimeSTT: realtimestt - DEBUG - Faster_whisper realtime speech to text transcription model initialized successfully
+2025-07-09 22:55:34.467 - RealTimeSTT: realtimestt - INFO - Initializing WebRTC voice with Sensitivity 3
+2025-07-09 22:55:34.467 - RealTimeSTT: realtimestt - DEBUG - WebRTC VAD voice activity detection engine initialized successfully
+2025-07-09 22:55:34.737 - RealTimeSTT: realtimestt - DEBUG - Silero VAD voice activity detection engine initialized successfully
+2025-07-09 22:55:34.737 - RealTimeSTT: realtimestt - DEBUG - Starting realtime worker
+2025-07-09 22:55:34.737 - RealTimeSTT: realtimestt - DEBUG - Waiting for main transcription model to start
+2025-07-09 22:55:36.145 - RealTimeSTT: realtimestt - DEBUG - Main transcription model ready
+2025-07-09 22:55:36.145 - RealTimeSTT: realtimestt - DEBUG - RealtimeSTT initialization completed successfully
+2025-07-09 22:55:44.708 - RealTimeSTT: realtimestt - DEBUG - Finishing recording thread
+2025-07-09 22:55:44.712 - RealTimeSTT: realtimestt - DEBUG - Terminating reader process
+2025-07-09 22:55:45.127 - RealTimeSTT: realtimestt - DEBUG - Terminating transcription process
+2025-07-09 22:55:45.128 - RealTimeSTT: realtimestt - DEBUG - Finishing realtime thread
+2025-07-09 22:57:50.863 - RealTimeSTT: realtimestt - INFO - Starting RealTimeSTT
+2025-07-09 22:57:50.870 - RealTimeSTT: realtimestt - INFO - Initializing audio recording (creating pyAudio input stream, sample rate: 16000 buffer size: 512
+2025-07-09 22:57:50.875 - RealTimeSTT: realtimestt - INFO - Initializing faster_whisper realtime transcription model tiny, default device: cpu, compute type: default, device index: 0, download root: None
+2025-07-09 22:57:51.824 - RealTimeSTT: realtimestt - DEBUG - Faster_whisper realtime speech to text transcription model initialized successfully
+2025-07-09 22:57:51.824 - RealTimeSTT: realtimestt - INFO - Initializing WebRTC voice with Sensitivity 3
+2025-07-09 22:57:51.824 - RealTimeSTT: realtimestt - DEBUG - WebRTC VAD voice activity detection engine initialized successfully
+2025-07-09 22:57:52.095 - RealTimeSTT: realtimestt - DEBUG - Silero VAD voice activity detection engine initialized successfully
+2025-07-09 22:57:52.095 - RealTimeSTT: realtimestt - DEBUG - Starting realtime worker
+2025-07-09 22:57:52.095 - RealTimeSTT: realtimestt - DEBUG - Waiting for main transcription model to start
+2025-07-09 22:57:53.614 - RealTimeSTT: realtimestt - DEBUG - Main transcription model ready
+2025-07-09 22:57:53.614 - RealTimeSTT: realtimestt - DEBUG - RealtimeSTT initialization completed successfully
+2025-07-09 22:58:00.846 - RealTimeSTT: realtimestt - DEBUG - Finishing recording thread
+2025-07-09 22:58:00.847 - RealTimeSTT: realtimestt - DEBUG - Receive from stdout pipe
+2025-07-09 22:58:00.847 - RealTimeSTT: realtimestt - INFO - None
+2025-07-09 22:58:00.847 - RealTimeSTT: realtimestt - DEBUG - Terminating reader process
+2025-07-09 22:58:01.255 - RealTimeSTT: realtimestt - DEBUG - Terminating transcription process
+2025-07-09 22:58:01.255 - RealTimeSTT: realtimestt - DEBUG - Finishing realtime thread
+2025-07-09 22:59:25.927 - RealTimeSTT: realtimestt - INFO - Starting RealTimeSTT
+2025-07-09 22:59:25.933 - RealTimeSTT: realtimestt - INFO - Initializing audio recording (creating pyAudio input stream, sample rate: 16000 buffer size: 512
+2025-07-09 22:59:25.938 - RealTimeSTT: realtimestt - INFO - Initializing faster_whisper realtime transcription model tiny, default device: cpu, compute type: default, device index: 0, download root: None
+2025-07-09 22:59:27.341 - RealTimeSTT: realtimestt - DEBUG - Faster_whisper realtime speech to text transcription model initialized successfully
+2025-07-09 22:59:27.342 - RealTimeSTT: realtimestt - INFO - Initializing WebRTC voice with Sensitivity 3
+2025-07-09 22:59:27.342 - RealTimeSTT: realtimestt - DEBUG - WebRTC VAD voice activity detection engine initialized successfully
+2025-07-09 22:59:27.606 - RealTimeSTT: realtimestt - DEBUG - Silero VAD voice activity detection engine initialized successfully
+2025-07-09 22:59:27.606 - RealTimeSTT: realtimestt - DEBUG - Starting realtime worker
+2025-07-09 22:59:27.606 - RealTimeSTT: realtimestt - DEBUG - Waiting for main transcription model to start
+2025-07-09 22:59:28.649 - RealTimeSTT: realtimestt - DEBUG - Main transcription model ready
+2025-07-09 22:59:28.649 - RealTimeSTT: realtimestt - DEBUG - RealtimeSTT initialization completed successfully
+2025-07-09 22:59:35.634 - RealTimeSTT: realtimestt - DEBUG - Finishing recording thread
+2025-07-09 22:59:35.634 - RealTimeSTT: realtimestt - DEBUG - Receive from stdout pipe
+2025-07-09 22:59:35.634 - RealTimeSTT: realtimestt - INFO - None
+2025-07-09 22:59:35.638 - RealTimeSTT: realtimestt - DEBUG - Terminating reader process
+2025-07-09 22:59:36.033 - RealTimeSTT: realtimestt - DEBUG - Terminating transcription process
+2025-07-09 22:59:36.033 - RealTimeSTT: realtimestt - DEBUG - Finishing realtime thread
+2025-07-09 23:01:08.305 - RealTimeSTT: realtimestt - INFO - Starting RealTimeSTT
+2025-07-09 23:01:08.311 - RealTimeSTT: realtimestt - INFO - Initializing audio recording (creating pyAudio input stream, sample rate: 16000 buffer size: 512
+2025-07-09 23:01:08.316 - RealTimeSTT: realtimestt - INFO - Initializing faster_whisper realtime transcription model tiny, default device: cpu, compute type: default, device index: 0, download root: None
+2025-07-09 23:01:09.194 - RealTimeSTT: realtimestt - DEBUG - Faster_whisper realtime speech to text transcription model initialized successfully
+2025-07-09 23:01:09.194 - RealTimeSTT: realtimestt - INFO - Initializing WebRTC voice with Sensitivity 3
+2025-07-09 23:01:09.194 - RealTimeSTT: realtimestt - DEBUG - WebRTC VAD voice activity detection engine initialized successfully
+2025-07-09 23:01:11.212 - RealTimeSTT: realtimestt - DEBUG - Silero VAD voice activity detection engine initialized successfully
+2025-07-09 23:01:11.213 - RealTimeSTT: realtimestt - DEBUG - Starting realtime worker
+2025-07-09 23:01:11.213 - RealTimeSTT: realtimestt - DEBUG - Waiting for main transcription model to start
+2025-07-09 23:01:11.213 - RealTimeSTT: realtimestt - DEBUG - Main transcription model ready
+2025-07-09 23:01:11.213 - RealTimeSTT: realtimestt - DEBUG - RealtimeSTT initialization completed successfully
+2025-07-09 23:01:19.881 - RealTimeSTT: realtimestt - DEBUG - Finishing recording thread
+2025-07-09 23:01:19.881 - RealTimeSTT: realtimestt - DEBUG - Receive from stdout pipe
+2025-07-09 23:01:19.883 - RealTimeSTT: realtimestt - INFO - None
+2025-07-09 23:01:19.884 - RealTimeSTT: realtimestt - DEBUG - Terminating reader process
+2025-07-09 23:01:20.303 - RealTimeSTT: realtimestt - DEBUG - Terminating transcription process
+2025-07-09 23:01:20.303 - RealTimeSTT: realtimestt - DEBUG - Finishing realtime thread
+2025-07-09 23:03:30.492 - RealTimeSTT: realtimestt - INFO - Starting RealTimeSTT
+2025-07-09 23:03:30.498 - RealTimeSTT: realtimestt - INFO - Initializing audio recording (creating pyAudio input stream, sample rate: 16000 buffer size: 512
+2025-07-09 23:03:30.503 - RealTimeSTT: realtimestt - INFO - Initializing faster_whisper realtime transcription model tiny, default device: cpu, compute type: default, device index: 0, download root: None
+2025-07-09 23:03:31.407 - RealTimeSTT: realtimestt - DEBUG - Faster_whisper realtime speech to text transcription model initialized successfully
+2025-07-09 23:03:31.407 - RealTimeSTT: realtimestt - INFO - Initializing WebRTC voice with Sensitivity 3
+2025-07-09 23:03:31.407 - RealTimeSTT: realtimestt - DEBUG - WebRTC VAD voice activity detection engine initialized successfully
+2025-07-09 23:03:32.012 - RealTimeSTT: realtimestt - DEBUG - Silero VAD voice activity detection engine initialized successfully
+2025-07-09 23:03:32.013 - RealTimeSTT: realtimestt - DEBUG - Starting realtime worker
+2025-07-09 23:03:32.013 - RealTimeSTT: realtimestt - DEBUG - Waiting for main transcription model to start
+2025-07-09 23:03:33.413 - RealTimeSTT: realtimestt - DEBUG - Main transcription model ready
+2025-07-09 23:03:33.413 - RealTimeSTT: realtimestt - DEBUG - RealtimeSTT initialization completed successfully
+2025-07-09 23:03:38.390 - RealTimeSTT: realtimestt - DEBUG - Finishing recording thread
+2025-07-09 23:03:38.390 - RealTimeSTT: realtimestt - DEBUG - Receive from stdout pipe
+2025-07-09 23:03:38.391 - RealTimeSTT: realtimestt - INFO - None
+2025-07-09 23:03:38.400 - RealTimeSTT: realtimestt - DEBUG - Terminating reader process
+2025-07-09 23:03:38.774 - RealTimeSTT: realtimestt - DEBUG - Terminating transcription process
+2025-07-09 23:03:38.774 - RealTimeSTT: realtimestt - DEBUG - Finishing realtime thread
+2025-07-09 23:05:02.622 - RealTimeSTT: realtimestt - INFO - Starting RealTimeSTT
+2025-07-09 23:05:02.630 - RealTimeSTT: realtimestt - INFO - Initializing audio recording (creating pyAudio input stream, sample rate: 16000 buffer size: 512
+2025-07-09 23:05:02.637 - RealTimeSTT: realtimestt - INFO - Initializing faster_whisper realtime transcription model tiny, default device: cpu, compute type: default, device index: 0, download root: None
+2025-07-09 23:05:03.582 - RealTimeSTT: realtimestt - DEBUG - Faster_whisper realtime speech to text transcription model initialized successfully
+2025-07-09 23:05:03.582 - RealTimeSTT: realtimestt - INFO - Initializing WebRTC voice with Sensitivity 3
+2025-07-09 23:05:03.582 - RealTimeSTT: realtimestt - DEBUG - WebRTC VAD voice activity detection engine initialized successfully
+2025-07-09 23:05:04.166 - RealTimeSTT: realtimestt - DEBUG - Silero VAD voice activity detection engine initialized successfully
+2025-07-09 23:05:04.166 - RealTimeSTT: realtimestt - DEBUG - Starting realtime worker
+2025-07-09 23:05:04.166 - RealTimeSTT: realtimestt - DEBUG - Waiting for main transcription model to start
+2025-07-09 23:05:05.470 - RealTimeSTT: realtimestt - DEBUG - Main transcription model ready
+2025-07-09 23:05:05.470 - RealTimeSTT: realtimestt - DEBUG - RealtimeSTT initialization completed successfully
+2025-07-09 23:05:15.407 - RealTimeSTT: realtimestt - DEBUG - Finishing recording thread
+2025-07-09 23:05:15.408 - RealTimeSTT: realtimestt - DEBUG - Receive from stdout pipe
+2025-07-09 23:05:15.408 - RealTimeSTT: realtimestt - INFO - None
+2025-07-09 23:05:15.410 - RealTimeSTT: realtimestt - DEBUG - Terminating reader process
+2025-07-09 23:05:15.797 - RealTimeSTT: realtimestt - DEBUG - Terminating transcription process
+2025-07-09 23:05:15.797 - RealTimeSTT: realtimestt - DEBUG - Finishing realtime thread
+2025-07-09 23:11:05.837 - RealTimeSTT: realtimestt - INFO - Starting RealTimeSTT
+2025-07-09 23:11:05.844 - RealTimeSTT: realtimestt - INFO - Initializing audio recording (creating pyAudio input stream, sample rate: 16000 buffer size: 512
+2025-07-09 23:11:05.848 - RealTimeSTT: realtimestt - INFO - Initializing faster_whisper realtime transcription model tiny, default device: cpu, compute type: default, device index: 0, download root: None
+2025-07-09 23:11:06.780 - RealTimeSTT: realtimestt - DEBUG - Faster_whisper realtime speech to text transcription model initialized successfully
+2025-07-09 23:11:06.780 - RealTimeSTT: realtimestt - INFO - Initializing WebRTC voice with Sensitivity 3
+2025-07-09 23:11:06.780 - RealTimeSTT: realtimestt - DEBUG - WebRTC VAD voice activity detection engine initialized successfully
+2025-07-09 23:11:07.025 - RealTimeSTT: realtimestt - DEBUG - Silero VAD voice activity detection engine initialized successfully
+2025-07-09 23:11:07.025 - RealTimeSTT: realtimestt - DEBUG - Starting realtime worker
+2025-07-09 23:11:07.025 - RealTimeSTT: realtimestt - DEBUG - Waiting for main transcription model to start
+2025-07-09 23:11:08.700 - RealTimeSTT: realtimestt - DEBUG - Main transcription model ready
+2025-07-09 23:11:08.701 - RealTimeSTT: realtimestt - DEBUG - RealtimeSTT initialization completed successfully
+2025-07-09 23:11:16.385 - RealTimeSTT: realtimestt - DEBUG - Finishing recording thread
+2025-07-09 23:11:16.395 - RealTimeSTT: realtimestt - DEBUG - Terminating reader process
+2025-07-09 23:11:16.827 - RealTimeSTT: realtimestt - DEBUG - Terminating transcription process
+2025-07-09 23:11:16.827 - RealTimeSTT: realtimestt - DEBUG - Finishing realtime thread
+2025-07-09 23:22:28.876 - RealTimeSTT: realtimestt - INFO - Starting RealTimeSTT
+2025-07-09 23:22:28.886 - RealTimeSTT: realtimestt - INFO - Initializing audio recording (creating pyAudio input stream, sample rate: 16000 buffer size: 512
+2025-07-09 23:22:28.892 - RealTimeSTT: realtimestt - INFO - Initializing WebRTC voice with Sensitivity 3
+2025-07-09 23:22:28.892 - RealTimeSTT: realtimestt - DEBUG - WebRTC VAD voice activity detection engine initialized successfully
+2025-07-09 23:22:30.346 - RealTimeSTT: realtimestt - DEBUG - Silero VAD voice activity detection engine initialized successfully
+2025-07-09 23:22:30.347 - RealTimeSTT: realtimestt - DEBUG - Starting realtime worker
+2025-07-09 23:22:30.347 - RealTimeSTT: realtimestt - DEBUG - Waiting for main transcription model to start
+2025-07-09 23:22:30.744 - RealTimeSTT: realtimestt - INFO - Starting RealTimeSTT
+2025-07-09 23:22:30.748 - RealTimeSTT: realtimestt - INFO - Starting RealTimeSTT
