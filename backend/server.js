@@ -10,6 +10,7 @@ app.use(express.json());
 
 const exampleRoutes = require('./routes/example');
 app.use('/api/example', exampleRoutes);
+app.use('/api/production_logs', require('./routes/production_logs'));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
